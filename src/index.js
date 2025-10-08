@@ -31,7 +31,7 @@ const express = require('express');
                 port: process.env.DB_PORT || 5432,
                 ssl: {
                     rejectUnauthorized: false
-                }
+                  }
     })
             await client.connect()
 
