@@ -29,7 +29,10 @@ const express = require('express');
                 database: process.env.DB_NAME,
                 password: process.env.DB_PASSWORD,
                 port: process.env.DB_PORT || 5432,
-            })
+                ssl: {
+                    rejectUnauthorized: false
+                }
+    })
             await client.connect()
 
             const result = await client.query('SELECT version()')
